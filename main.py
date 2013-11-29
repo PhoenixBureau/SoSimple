@@ -1,4 +1,5 @@
 import logging
+from subprocess import Popen, PIPE
 from flask import Flask, request, render_template, jsonify
 
 
@@ -22,6 +23,11 @@ def _setup_log():
 log = _setup_log()
 
 
+def update():
+  p = Popen(["git", "pull"], stdout=PIPE, stderr=PIPE)
+  return p.communicate()
+
+
 app = Flask(__name__)
 app.debug = True
 
@@ -34,7 +40,12 @@ def index():
 @app.route('/hookey', methods=['POST'])
 def hookey():
   data = dict(request.form)
-  log.info('data %r', data)
+  log.info('hook %r', data)
+  pull, err = update()
+  if err:
+    log.error('pull %s', err)
+  else:
+    log.info('pull %r', pull)
   return jsonify(data=data)
 
 
