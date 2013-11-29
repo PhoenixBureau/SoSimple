@@ -43,9 +43,8 @@ def hookey():
   log.info('hook %r', data)
   pull, err = update()
   if err:
-    log.error('pull %s', err)
-  else:
-    log.info('pull %r', pull)
+    pull += err
+  log.info('pull %r', pull)
   return jsonify(data=data)
 
 
