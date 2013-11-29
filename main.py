@@ -1,26 +1,10 @@
-import logging
+import logging, logging.config
 from subprocess import Popen, PIPE
 from flask import Flask, request, render_template, jsonify
+import log_config
 
 
-def _setup_log():
-  log = logging.getLogger('sosimple')
-  log.setLevel(logging.DEBUG)
-
-  sh = logging.StreamHandler()
-  sh.setLevel(logging.DEBUG)
-  sh.setFormatter(logging.Formatter('%(asctime)s %(name)s %(levelname)s %(message)s'))
-  log.addHandler(sh)
-
-  fh = logging.FileHandler('sosimple.log')
-  fh.setLevel(logging.INFO)
-  fh.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
-  log.addHandler(fh)
-
-  return log
-
-
-log = _setup_log()
+log = logging.getLogger('sosimple')
 
 
 def update():
@@ -47,5 +31,6 @@ def hookey():
 
 
 if __name__ == '__main__':
+  logging.config.dictConfig(log_config.config)
   app.run(host='0.0.0.0')
 
