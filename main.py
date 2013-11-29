@@ -42,8 +42,7 @@ def hookey():
   data = dict(request.form)
   log.info('hook %r', data)
   pull, err = update()
-  pull += err
-  log.info('pull %r', pull)
+  log.info('pull %r', pull + err)
   return jsonify(data=data)
 
 
