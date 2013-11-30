@@ -56,12 +56,13 @@ loc = conn.list_locations()[0]
 
 
 if __name__ == '__main__':
-  node = conn.deploy_node(
-    name='fred' + str(len(conn.list_nodes())),
-    size=s[1],
-    image=d[125],
-    location=loc,
-    deploy=msd,
-    )
-  print node, node.extra
+  if raw_input('y to make server') == 'y':
+    node = conn.deploy_node(
+      name='fred' + str(len(conn.list_nodes())),
+      size=s[1],
+      image=d[125],
+      location=loc,
+      deploy=msd,
+      )
+    print node, node.extra
 
