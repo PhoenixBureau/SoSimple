@@ -1,0 +1,17 @@
+
+# Start in homedir and create deploy key.
+cd
+mkdir .ssh
+chmod og-rwx .ssh
+cd .ssh
+ssh-keygen -t rsa
+echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXzaAWCJnsvaFxPbwtprAKLH/f0rMvEtPzy8W7Y9gkuQguGglEY26xFPWl68Ip54pMLxM2qsmutUHcdKwM2km1QKUk2z6P+SyBulww6sCSh2rcwBMiLVrric87K8RHf0AALNP/MG9S8HTVbql/EapRlgPP/zcBYJ9ugaagYZPW2TL9atS5of4WUpkmQ6GeJltclz1QWWHe8oachsikraKTrwjHa+F1UFKcnw7oWHQPp0iITH1E5GpUtyTi6Y45e4YFn1uz0vPdstLb3EjxF7nxHJwYBN6U7vQJr2rZV0DHREV+g+gfVLztccRDgcbqmkN0Nf2T0XfdMrSI9yo89yIp sforman@hushmail.com' >> authorized_keys
+
+cd
+virtualenv venv
+source ~/venv/bin/activate
+git clone git@github.com:PhoenixBureau/SoSimple.git
+cd SoSimple/
+pip install -r requirements.text 
+python main.py 
+
