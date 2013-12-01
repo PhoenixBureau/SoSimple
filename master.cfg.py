@@ -14,7 +14,7 @@ c = BuildmasterConfig = {}
 # a BuildSlave object, specifying a unique slave name and password.  The same
 # slave name and password must be configured on the slave.
 from buildbot.buildslave import BuildSlave
-c['slaves'] = [BuildSlave("example-slave", "pass")]
+c['slaves'] = [BuildSlave("uno", "Ljfeqqsd2c")]
 
 # 'slavePortnum' defines the TCP port to listen on for connections from slaves.
 # This must match the value configured into the buildslaves (with their
@@ -29,9 +29,11 @@ c['slavePortnum'] = 9989
 from buildbot.changes.gitpoller import GitPoller
 c['change_source'] = []
 c['change_source'].append(GitPoller(
-        'git://github.com/buildbot/pyflakes.git',
-        workdir='gitpoller-workdir', branch='master',
-        pollinterval=300))
+  'git@github.com:PhoenixBureau/SoSimple.git',
+  workdir='gitpoller-workdir',
+  branch='master',
+  pollinterval=300,
+  ))
 
 ####### SCHEDULERS
 
