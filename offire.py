@@ -15,7 +15,7 @@ class TestTest(unittest.TestCase):
 
   def test_hello(self):
     rv = self.app.get('/')
-    print 23
+    print 230
     self.assertTrue('Hello World!' in rv.data)
 
 
