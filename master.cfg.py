@@ -28,12 +28,12 @@ c['slavePortnum'] = 9989
 
 from buildbot.changes.gitpoller import GitPoller
 c['change_source'] = []
-c['change_source'].append(GitPoller(
-  'git@github.com:PhoenixBureau/SoSimple.git',
-  workdir='gitpoller-workdir',
-  branch='master',
-  pollinterval=300,
-  ))
+##c['change_source'].append(GitPoller(
+##  'git@github.com:PhoenixBureau/SoSimple.git',
+##  workdir='gitpoller-workdir',
+##  branch='master',
+##  pollinterval=300,
+##  ))
 
 ####### SCHEDULERS
 
