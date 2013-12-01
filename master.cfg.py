@@ -91,7 +91,7 @@ from buildbot.status.web import authz, auth
 authz_cfg=authz.Authz(
     # change any of these to True to enable; see the manual for more
     # options
-    auth=auth.BasicAuth([("pyflakes","pyflakes")]),
+    auth=auth.BasicAuth([("calroc","wqY3zWcqZL")]),
     gracefulShutdown = False,
     forceBuild = 'auth', # use this to test your slave once it is set up
     forceAllBuilds = False,
