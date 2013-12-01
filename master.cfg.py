@@ -106,6 +106,7 @@ c['status'].append(html.WebStatus(
   http_port=8010,
   authz=authz_cfg,
   change_hook_dialects={'github': True},
+  change_hook_auth=["file:changehook.passwd"],
   ))
 
 ####### PROJECT IDENTITY
