@@ -64,10 +64,12 @@ from buildbot.steps.source.git import Git
 from buildbot.steps.shell import ShellCommand
 
 factory = BuildFactory()
+
 # check out the source
 factory.addStep(Git(repourl='git@github.com:PhoenixBureau/SoSimple.git', mode='incremental'))
+
 # run the tests (note that this will require that 'trial' is installed)
-# factory.addStep(ShellCommand(command=["trial", "pyflakes"]))
+factory.addStep(ShellCommand(command=["trial", "offire"]))
 
 from buildbot.config import BuilderConfig
 
