@@ -102,7 +102,11 @@ authz_cfg=authz.Authz(
     stopAllBuilds = False,
     cancelPendingBuild = False,
 )
-c['status'].append(html.WebStatus(http_port=8010, authz=authz_cfg))
+c['status'].append(html.WebStatus(
+  http_port=8010,
+  authz=authz_cfg,
+  change_hook_dialects={'github': True},
+  ))
 
 ####### PROJECT IDENTITY
 
