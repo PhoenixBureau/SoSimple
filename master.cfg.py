@@ -65,9 +65,9 @@ from buildbot.steps.shell import ShellCommand
 
 factory = BuildFactory()
 # check out the source
-factory.addStep(Git(repourl='git://github.com/buildbot/pyflakes.git', mode='incremental'))
+factory.addStep(Git(repourl='git@github.com:PhoenixBureau/SoSimple.git', mode='incremental'))
 # run the tests (note that this will require that 'trial' is installed)
-factory.addStep(ShellCommand(command=["trial", "pyflakes"]))
+# factory.addStep(ShellCommand(command=["trial", "pyflakes"]))
 
 from buildbot.config import BuilderConfig
 
@@ -108,8 +108,8 @@ c['status'].append(html.WebStatus(http_port=8010, authz=authz_cfg))
 # installation's html.WebStatus home page (linked to the
 # 'titleURL') and is embedded in the title of the waterfall HTML page.
 
-c['title'] = "Pyflakes"
-c['titleURL'] = "https://launchpad.net/pyflakes"
+c['title'] = "SoSimple"
+c['titleURL'] = "https://github.com/PhoenixBureau/SoSimple"
 
 # the 'buildbotURL' string should point to the location where the buildbot's
 # internal web server (usually the html.WebStatus page) is visible. This
