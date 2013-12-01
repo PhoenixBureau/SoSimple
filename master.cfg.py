@@ -74,7 +74,7 @@ from buildbot.config import BuilderConfig
 c['builders'] = []
 c['builders'].append(
     BuilderConfig(name="runtests",
-      slavenames=["example-slave"],
+      slavenames=["uno"],
       factory=factory))
 
 ####### STATUS TARGETS
