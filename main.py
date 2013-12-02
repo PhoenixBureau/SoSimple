@@ -31,4 +31,3 @@ def hookey():
 if __name__ == '__main__':
   logging.config.dictConfig(log_config.config)
   app.run(host='0.0.0.0')
-
