@@ -69,7 +69,8 @@ factory = BuildFactory()
 factory.addStep(Git(repourl='git@github.com:PhoenixBureau/SoSimple.git', mode='incremental'))
 
 # run the tests (note that this will require that 'trial' is installed)
-factory.addStep(ShellCommand(command=["trial", "offire"]))
+factory.addStep(ShellCommand(command=["trial", "offire"],
+                             haltOnFailure=True))
 
 # attempt to update the local copy.
 factory.addStep(ShellCommand(command=["wget",
