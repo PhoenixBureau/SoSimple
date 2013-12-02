@@ -77,8 +77,6 @@ factory.addStep(ShellCommand(command=["wget",
                                       '-O', '/dev/null',
                                       "http://localhost:5000/hookey"]))
 
-http://23.253.36.199:5000/hookey
-
 from buildbot.config import BuilderConfig
 
 c['builders'] = []
