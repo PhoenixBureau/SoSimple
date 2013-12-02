@@ -71,6 +71,14 @@ factory.addStep(Git(repourl='git@github.com:PhoenixBureau/SoSimple.git', mode='i
 # run the tests (note that this will require that 'trial' is installed)
 factory.addStep(ShellCommand(command=["trial", "offire"]))
 
+# attempt to update the local copy.
+factory.addStep(ShellCommand(command=["wget",
+                                      '-q',
+                                      '-O', '/dev/null',
+                                      "http://localhost:5000/hookey"]))
+
+http://23.253.36.199:5000/hookey
+
 from buildbot.config import BuilderConfig
 
 c['builders'] = []

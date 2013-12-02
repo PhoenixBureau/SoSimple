@@ -21,10 +21,8 @@ def index():
   return render_template('index.html')
 
 
-@app.route('/hookey', methods=['POST'])
+@app.route('/hookey')
 def hookey():
-  data = dict(request.form)
-  log.info('hook %r', data)
   pull, err = update()
   log.info('pull %r', pull + err)
   return jsonify(data=data)
