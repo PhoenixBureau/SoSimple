@@ -73,7 +73,7 @@ factory.addStep(ShellCommand(command=["trial", "offire"]))
 
 # attempt to update the local copy.
 factory.addStep(ShellCommand(command=["wget",
-                                      '-q',
+##                                      '-q',
                                       '-O', '/dev/null',
                                       "http://localhost:5000/hookey"]))
 
