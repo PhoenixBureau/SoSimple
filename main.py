@@ -25,6 +25,8 @@ def index():
 def hookey():
   pull, err = update()
   log.info('pull %r', pull + err)
+  print pull
+  print err
   return 'yay!'
 
 
