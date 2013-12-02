@@ -25,7 +25,7 @@ def index():
 def hookey():
   pull, err = update()
   log.info('pull %r', pull + err)
-  return jsonify(data=data)
+  return 'yay!'
 
 
 if __name__ == '__main__':
